@@ -4,19 +4,19 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f006d254b32b65f3c297fea99ca95734",
+    "content-hash": "3c07bbac9729f1b8c68fc17a95628928",
     "packages": [
         {
             "name": "greenplugin/telegram-bot-api",
             "version": "dev-draft",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Greenplugin/telegram-bot-api.git",
+                "url": "https://github.com/greenplugin/telegram-bot-api.git",
                 "reference": "71327c0f19f2484762421589d2f57728e92bfa6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Greenplugin/telegram-bot-api/zipball/71327c0f19f2484762421589d2f57728e92bfa6d",
+                "url": "https://api.github.com/repos/greenplugin/telegram-bot-api/zipball/71327c0f19f2484762421589d2f57728e92bfa6d",
                 "reference": "71327c0f19f2484762421589d2f57728e92bfa6d",
                 "shasum": ""
             },

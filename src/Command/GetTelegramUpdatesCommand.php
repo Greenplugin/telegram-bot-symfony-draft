@@ -24,12 +24,12 @@ class GetTelegramUpdatesCommand extends Command
     private $client;
     private $bot;
 
-    public function __construct(ParameterBagInterface $params, HttpClientInterface $client, $name = null)
+    public function __construct(ParameterBagInterface $params, HttpClientInterface $client)
     {
         $this->params = $params;
         $this->client = $client;
         $this->bot = new BotApi($this->client, $this->params->get('telegram.token'));
-        parent::__construct($name);
+        parent::__construct();
     }
 
     protected function configure()

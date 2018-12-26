@@ -14,6 +14,7 @@ class WebClient implements HttpClientInterface
     private $client;
     private $params;
     private $fs;
+    private $longPooling = false;
 
     public function __construct(BuzzClientInterface $client, ParameterBagInterface $params, Filesystem $fs)
     {
@@ -48,11 +49,25 @@ class WebClient implements HttpClientInterface
         $requestName = $this->getRequestName($path);
         $this->writeRequest($requestName, $data);
         $request = new Request('POST', $path, ['Content-Type' => 'application/json'], \json_encode($data));
-        $response = $this->client->sendRequest($request);
+        if ($this->longPooling) {
+            $response = $this->client->sendRequest($request, ['timeout' => 16000]);
+        } else {
+            $response = $this->client->sendRequest($request);
+        }
         $contents = $response->getBody()->getContents();
         $this->writeResponse($requestName, $contents);
 
         return \json_decode($contents);
+    }
+
+    public function enableLongPooling()
+    {
+        $this->longPooling = true;
+    }
+
+    public function disableLongPooling()
+    {
+        $this->longPooling = false;
     }
 
     private function writeRequest($requestName, array $data)
