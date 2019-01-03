@@ -6,13 +6,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="App\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/greenplugin/telegram-bot-api" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/kriswallsmith/buzz" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/http-interop/http-factory-guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/nyholm/psr7" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/php-ds/php-ds" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/guzzle6-adapter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/httplug" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/message-factory" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/promise" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
@@ -24,6 +24,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/config" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/console" />
@@ -40,7 +41,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-kernel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/maker-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/options-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/property-access" />
@@ -50,6 +50,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-exporter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/web-server-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tg-bot-api/telegram-bot-api" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
     </content>
     <orderEntry type="inheritedJdk" />

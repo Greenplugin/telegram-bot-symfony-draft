@@ -3,18 +3,15 @@
 namespace App\Command;
 
 use App\Event\TelegramIncomingUpdateEvent;
-use App\Service\WebClient;
-use Greenplugin\TelegramBot\BotApi;
-use Greenplugin\TelegramBot\HttpClientInterface;
+
+use Greenplugin\TelegramBot\BotApiInterface;
 use Greenplugin\TelegramBot\Method\GetUpdatesMethod;
 use Greenplugin\TelegramBot\Type\UpdateType;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class TelegramWatchCommand extends Command
@@ -25,14 +22,10 @@ class TelegramWatchCommand extends Command
 
     private $bot;
 
-    private $params;
-
-    public function __construct(ParameterBagInterface $params, EventDispatcherInterface $eventDispatcher, WebClient $webClient)
+    public function __construct(BotApiInterface $bot, EventDispatcherInterface $eventDispatcher)
     {
         $this->eventDispatcher = $eventDispatcher;
-        $this->params = $params;
-        $webClient->enableLongPooling();
-        $this->bot = new BotApi($webClient, $params->get('telegram.token'));
+        $this->bot = $bot;
         parent::__construct();
     }
 
@@ -66,7 +59,7 @@ class TelegramWatchCommand extends Command
 
         while (true) {
             $io->title('Getting update...');
-            $updates = $this->bot->getUpdates(new GetUpdatesMethod($updateParams));
+            $updates = $this->bot->getUpdates(GetUpdatesMethod::create($updateParams));
             foreach ($updates as $update) {
                 $event = new TelegramIncomingUpdateEvent($update);
                 $this->eventDispatcher->dispatch($event::NAME, $event);

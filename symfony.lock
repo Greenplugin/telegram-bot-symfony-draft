@@ -5,35 +5,26 @@
     "greenplugin/telegram-bot-api": {
         "version": "1.0-dev"
     },
-    "kriswallsmith/buzz": {
-        "version": "0.17",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "0.17",
-            "ref": "89a8c10882c422723d1c7f80a41f7008b17f608c"
-        }
+    "guzzlehttp/guzzle": {
+        "version": "6.3.3"
+    },
+    "guzzlehttp/promises": {
+        "version": "v1.3.1"
+    },
+    "guzzlehttp/psr7": {
+        "version": "1.5.2"
+    },
+    "http-interop/http-factory-guzzle": {
+        "version": "1.0.0"
     },
     "nikic/php-parser": {
         "version": "v4.1.0"
     },
-    "nyholm/psr7": {
-        "version": "1.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "1.0",
-            "ref": "3aa866bf188c8da0ca5fceca4abd57e0b61029bd"
-        }
-    },
-    "php-ds/php-ds": {
-        "version": "v1.2.0"
+    "php-http/guzzle6-adapter": {
+        "version": "v2.0.1"
     },
     "php-http/httplug": {
-        "version": "v1.1.0"
-    },
-    "php-http/message-factory": {
-        "version": "v1.0.2"
+        "version": "v2.0.0"
     },
     "php-http/promise": {
         "version": "v1.0.0"
@@ -67,6 +58,9 @@
     },
     "psr/simple-cache": {
         "version": "1.0.1"
+    },
+    "ralouphie/getallheaders": {
+        "version": "2.0.5"
     },
     "symfony/cache": {
         "version": "v4.2.1"
@@ -140,9 +134,6 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
-    "symfony/options-resolver": {
-        "version": "v4.2.1"
-    },
     "symfony/polyfill-mbstring": {
         "version": "v1.10.0"
     },
@@ -181,6 +172,9 @@
     },
     "symfony/yaml": {
         "version": "v4.2.1"
+    },
+    "tg-bot-api/telegram-bot-api": {
+        "version": "1.0-dev"
     },
     "webmozart/assert": {
         "version": "1.4.0"

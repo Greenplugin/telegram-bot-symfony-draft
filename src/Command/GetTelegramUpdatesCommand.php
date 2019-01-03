@@ -2,9 +2,9 @@
 
 namespace App\Command;
 
+use Greenplugin\TelegramBot\ApiClientInterface;
 use Greenplugin\TelegramBot\BotApi;
-use Greenplugin\TelegramBot\HttpClientInterface;
-use Greenplugin\TelegramBot\Method\GetMeMethod;
+use Greenplugin\TelegramBot\BotApiInterface;
 use Greenplugin\TelegramBot\Method\GetUpdatesMethod;
 use Greenplugin\TelegramBot\Type\UpdateType;
 use Symfony\Component\Console\Command\Command;
@@ -20,15 +20,14 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 class GetTelegramUpdatesCommand extends Command
 {
     protected static $defaultName = 'telegram:showUpdates';
-    private $params;
-    private $client;
+    /**
+     * @var BotApi
+     */
     private $bot;
 
-    public function __construct(ParameterBagInterface $params, HttpClientInterface $client)
+    public function __construct(BotApiInterface $bot)
     {
-        $this->params = $params;
-        $this->client = $client;
-        $this->bot = new BotApi($this->client, $this->params->get('telegram.token'));
+        $this->bot = $bot;
         parent::__construct();
     }
 
@@ -49,7 +48,7 @@ class GetTelegramUpdatesCommand extends Command
         $io = new SymfonyStyle($input, $output);
 
 
-        $updates = $this->bot->getUpdates(new GetUpdatesMethod([]));
+        $updates = $this->bot->getUpdates(GetUpdatesMethod::create());
 
         $io->title(sprintf("count of updates: %s", count($updates)));
         $rows = [];
@@ -84,5 +83,6 @@ class GetTelegramUpdatesCommand extends Command
         if (isset($update->editedMessage)) {
             return $update->editedMessage;
         }
+        return $update->message;
     }
 }

@@ -4,133 +4,47 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c07bbac9729f1b8c68fc17a95628928",
+    "content-hash": "ef27bfc30ebfa93474b0024b71857db6",
     "packages": [
         {
-            "name": "greenplugin/telegram-bot-api",
-            "version": "dev-draft",
+            "name": "guzzlehttp/guzzle",
+            "version": "6.3.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/greenplugin/telegram-bot-api.git",
-                "reference": "71327c0f19f2484762421589d2f57728e92bfa6d"
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greenplugin/telegram-bot-api/zipball/71327c0f19f2484762421589d2f57728e92bfa6d",
-                "reference": "71327c0f19f2484762421589d2f57728e92bfa6d",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
                 "shasum": ""
             },
             "require": {
-                "ext-json": "*",
-                "kriswallsmith/buzz": "^0.17.2",
-                "php": ">7.2",
-                "php-ds/php-ds": "^1.2",
-                "symfony/property-access": "^4.2",
-                "symfony/property-info": "^4.2",
-                "symfony/serializer": "^4.2"
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.4",
+                "php": ">=5.5"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.13",
-                "phpro/grumphp": "^0.14.3",
-                "phpstan/phpstan": "^0.10.6",
-                "phpunit/phpunit": "~7.5.1",
-                "povils/phpmnd": "^2.0",
-                "sebastian/phpcpd": "^4.1",
-                "squizlabs/php_codesniffer": "^3.0"
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+                "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "6.3-dev"
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Greenplugin\\TelegramBot\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Greenplugin\\TelegramBot\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "phpunit"
+                "files": [
+                    "src/functions_include.php"
                 ],
-                "check-style": [
-                    "phpcs src tests"
-                ],
-                "fix-style": [
-                    "phpcbf src tests"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Greenplugin",
-                    "email": "wformps@gmail.com",
-                    "homepage": "https://github.com/Greenplugin/telegram-bot-api",
-                    "role": "Developer"
-                }
-            ],
-            "description": "this is low low lwvwl telegram bot api",
-            "homepage": "https://github.com/greenplugin/telegram-bot-api",
-            "keywords": [
-                "greenplugin",
-                "telegram-bot-api"
-            ],
-            "support": {
-                "source": "https://github.com/Greenplugin/telegram-bot-api/tree/draft",
-                "issues": "https://github.com/Greenplugin/telegram-bot-api/issues"
-            },
-            "time": "2018-12-26T00:08:00+00:00"
-        },
-        {
-            "name": "kriswallsmith/buzz",
-            "version": "0.17.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kriswallsmith/Buzz.git",
-                "reference": "0d7e985003f074fca0ceb00bf2f650d749ae9710"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/Buzz/zipball/0d7e985003f074fca0ceb00bf2f650d749ae9710",
-                "reference": "0d7e985003f074fca0ceb00bf2f650d749ae9710",
-                "shasum": ""
-            },
-            "require": {
-                "nyholm/psr7": "^1.0",
-                "php": "^7.1",
-                "php-http/httplug": "^1.1",
-                "psr/http-client": "^0.1",
-                "psr/http-factory": "^1.0",
-                "psr/http-message": "^1.0",
-                "symfony/options-resolver": "^3.4 || ^4.0"
-            },
-            "conflict": {
-                "http-interop/http-factory": "<0.4.1"
-            },
-            "provide": {
-                "php-http/client-implementation": "1.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.11",
-                "php-http/client-integration-tests": "^0.6.2",
-                "phpunit/phpunit": "^6.5.7",
-                "psr/log": "^1.0",
-                "symfony/phpunit-bridge": "^4.0"
-            },
-            "suggest": {
-                "ext-curl": "*"
-            },
-            "type": "library",
-            "autoload": {
                 "psr-4": {
-                    "Buzz\\": "lib"
+                    "GuzzleHttp\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -139,63 +53,113 @@
             ],
             "authors": [
                 {
-                    "name": "Kris Wallsmith",
-                    "email": "kris.wallsmith@gmail.com",
-                    "homepage": "http://kriswallsmith.net/"
-                },
-                {
-                    "name": "Tobias Nyholm",
-                    "email": "tobias.nyholm@gmail.com",
-                    "homepage": "http://tnyholm.se/"
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
                 }
             ],
-            "description": "Lightweight HTTP client",
-            "homepage": "https://github.com/kriswallsmith/Buzz",
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
             "keywords": [
+                "client",
                 "curl",
-                "http client"
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
             ],
-            "time": "2018-09-05T17:20:52+00:00"
+            "time": "2018-04-22T15:46:56+00:00"
         },
         {
-            "name": "nyholm/psr7",
-            "version": "1.0.1",
+            "name": "guzzlehttp/promises",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Nyholm/psr7.git",
-                "reference": "02a20d5e9241daefd68935f7a43d9a7a8b4b6277"
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nyholm/psr7/zipball/02a20d5e9241daefd68935f7a43d9a7a8b4b6277",
-                "reference": "02a20d5e9241daefd68935f7a43d9a7a8b4b6277",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1",
-                "php-http/message-factory": "^1.0",
-                "psr/http-factory": "^1.0",
-                "psr/http-message": "^1.0"
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle promises library",
+            "keywords": [
+                "promise"
+            ],
+            "time": "2016-12-20T10:07:11+00:00"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "1.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "9f83dded91781a01c63574e387eaa769be769115"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/9f83dded91781a01c63574e387eaa769be769115",
+                "reference": "9f83dded91781a01c63574e387eaa769be769115",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0",
+                "ralouphie/getallheaders": "^2.0.5"
             },
             "provide": {
-                "psr/http-factory-implementation": "1.0",
                 "psr/http-message-implementation": "1.0"
             },
             "require-dev": {
-                "http-interop/http-factory-tests": "dev-master",
-                "php-http/psr7-integration-tests": "dev-master",
-                "phpunit/phpunit": "^7.0"
+                "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.8"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Nyholm\\Psr7\\": "src/"
-                }
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -203,49 +167,57 @@
             ],
             "authors": [
                 {
-                    "name": "Tobias Nyholm",
-                    "email": "tobias.nyholm@gmail.com"
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
                 },
                 {
-                    "name": "Martijn van der Ven",
-                    "email": "martijn@vanderven.se"
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
                 }
             ],
-            "description": "A fast PHP7 implementation of PSR-7",
-            "homepage": "http://tnyholm.se",
+            "description": "PSR-7 message implementation that also provides common utility methods",
             "keywords": [
-                "psr-17",
-                "psr-7"
+                "http",
+                "message",
+                "psr-7",
+                "request",
+                "response",
+                "stream",
+                "uri",
+                "url"
             ],
-            "time": "2018-09-02T11:50:33+00:00"
+            "time": "2018-12-04T20:46:45+00:00"
         },
         {
-            "name": "php-ds/php-ds",
-            "version": "v1.2.0",
+            "name": "http-interop/http-factory-guzzle",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-ds/polyfill.git",
-                "reference": "27bed3897f9c801604f5bdcb65b71eb61ec80099"
+                "url": "https://github.com/http-interop/http-factory-guzzle.git",
+                "reference": "34861658efb9899a6618cef03de46e2a52c80fc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-ds/polyfill/zipball/27bed3897f9c801604f5bdcb65b71eb61ec80099",
-                "reference": "27bed3897f9c801604f5bdcb65b71eb61ec80099",
+                "url": "https://api.github.com/repos/http-interop/http-factory-guzzle/zipball/34861658efb9899a6618cef03de46e2a52c80fc0",
+                "reference": "34861658efb9899a6618cef03de46e2a52c80fc0",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0.0"
+                "guzzlehttp/psr7": "^1.4.2",
+                "psr/http-factory": "^1.0"
+            },
+            "provide": {
+                "psr/http-factory-implementation": "^1.0"
             },
             "require-dev": {
-                "php-ds/tests": "^1.2"
-            },
-            "suggest": {
-                "ext-ds": "to improve performance and reduce memory usage"
+                "http-interop/http-factory-tests": "^0.5",
+                "phpunit/phpunit": "^6.5"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Ds\\": "src"
+                    "Http\\Factory\\Guzzle\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -254,35 +226,100 @@
             ],
             "authors": [
                 {
-                    "name": "Rudi Theunissen",
-                    "email": "rudolf.theunissen@gmail.com"
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
                 }
             ],
+            "description": "An HTTP Factory using Guzzle PSR7",
             "keywords": [
-                "data structures",
-                "ds",
-                "php",
-                "polyfill"
+                "factory",
+                "http",
+                "psr-17",
+                "psr-7"
             ],
-            "time": "2017-08-03T02:03:34+00:00"
+            "time": "2018-07-31T19:32:56+00:00"
         },
         {
-            "name": "php-http/httplug",
-            "version": "v1.1.0",
+            "name": "php-http/guzzle6-adapter",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-http/httplug.git",
-                "reference": "1c6381726c18579c4ca2ef1ec1498fdae8bdf018"
+                "url": "https://github.com/php-http/guzzle6-adapter.git",
+                "reference": "6074a4b1f4d5c21061b70bab3b8ad484282fe31f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/httplug/zipball/1c6381726c18579c4ca2ef1ec1498fdae8bdf018",
-                "reference": "1c6381726c18579c4ca2ef1ec1498fdae8bdf018",
+                "url": "https://api.github.com/repos/php-http/guzzle6-adapter/zipball/6074a4b1f4d5c21061b70bab3b8ad484282fe31f",
+                "reference": "6074a4b1f4d5c21061b70bab3b8ad484282fe31f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4",
+                "guzzlehttp/guzzle": "^6.0",
+                "php": "^7.1",
+                "php-http/httplug": "^2.0",
+                "psr/http-client": "^1.0"
+            },
+            "provide": {
+                "php-http/async-client-implementation": "1.0",
+                "php-http/client-implementation": "1.0",
+                "psr/http-client-implementation": "1.0"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "php-http/client-integration-tests": "^2.0",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\Adapter\\Guzzle6\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                },
+                {
+                    "name": "David de Boer",
+                    "email": "david@ddeboer.nl"
+                }
+            ],
+            "description": "Guzzle 6 HTTP Adapter",
+            "homepage": "http://httplug.io",
+            "keywords": [
+                "Guzzle",
+                "http"
+            ],
+            "time": "2018-12-16T14:44:03+00:00"
+        },
+        {
+            "name": "php-http/httplug",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/httplug.git",
+                "reference": "b3842537338c949f2469557ef4ad4bdc47b58603"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/httplug/zipball/b3842537338c949f2469557ef4ad4bdc47b58603",
+                "reference": "b3842537338c949f2469557ef4ad4bdc47b58603",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
                 "php-http/promise": "^1.0",
+                "psr/http-client": "^1.0",
                 "psr/http-message": "^1.0"
             },
             "require-dev": {
@@ -292,7 +329,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -320,57 +357,7 @@
                 "client",
                 "http"
             ],
-            "time": "2016-08-31T08:30:17+00:00"
-        },
-        {
-            "name": "php-http/message-factory",
-            "version": "v1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-http/message-factory.git",
-                "reference": "a478cb11f66a6ac48d8954216cfed9aa06a501a1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-http/message-factory/zipball/a478cb11f66a6ac48d8954216cfed9aa06a501a1",
-                "reference": "a478cb11f66a6ac48d8954216cfed9aa06a501a1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4",
-                "psr/http-message": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Http\\Message\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Márk Sági-Kazár",
-                    "email": "mark.sagikazar@gmail.com"
-                }
-            ],
-            "description": "Factory interfaces for PSR-7 HTTP Message",
-            "homepage": "http://php-http.org",
-            "keywords": [
-                "factory",
-                "http",
-                "message",
-                "stream",
-                "uri"
-            ],
-            "time": "2015-12-19T14:08:53+00:00"
+            "time": "2018-10-31T09:14:44+00:00"
         },
         {
             "name": "php-http/promise",
@@ -671,16 +658,16 @@
         },
         {
             "name": "psr/http-client",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-client.git",
-                "reference": "d4d3ec04b034120b0591ad9722a4c2be33a7dfec"
+                "reference": "496a823ef742b632934724bf769560c2a5c7c44e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-client/zipball/d4d3ec04b034120b0591ad9722a4c2be33a7dfec",
-                "reference": "d4d3ec04b034120b0591ad9722a4c2be33a7dfec",
+                "url": "https://api.github.com/repos/php-fig/http-client/zipball/496a823ef742b632934724bf769560c2a5c7c44e",
+                "reference": "496a823ef742b632934724bf769560c2a5c7c44e",
                 "shasum": ""
             },
             "require": {
@@ -716,7 +703,7 @@
                 "psr",
                 "psr-18"
             ],
-            "time": "2018-02-03T12:55:20+00:00"
+            "time": "2018-10-30T23:29:13+00:00"
         },
         {
             "name": "psr/http-factory",
@@ -914,6 +901,46 @@
                 "simple-cache"
             ],
             "time": "2017-10-23T01:57:42+00:00"
+        },
+        {
+            "name": "ralouphie/getallheaders",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ralouphie/getallheaders.git",
+                "reference": "5601c8a83fbba7ef674a7369456d12f1e0d0eafa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ralouphie/getallheaders/zipball/5601c8a83fbba7ef674a7369456d12f1e0d0eafa",
+                "reference": "5601c8a83fbba7ef674a7369456d12f1e0d0eafa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7.0",
+                "satooshi/php-coveralls": ">=1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/getallheaders.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ralph Khattar",
+                    "email": "ralph.khattar@gmail.com"
+                }
+            ],
+            "description": "A polyfill for getallheaders.",
+            "time": "2016-02-11T07:05:27+00:00"
         },
         {
             "name": "symfony/cache",
@@ -1910,60 +1937,6 @@
             "time": "2018-11-11T19:52:12+00:00"
         },
         {
-            "name": "symfony/options-resolver",
-            "version": "v4.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/options-resolver.git",
-                "reference": "a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba",
-                "reference": "a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\OptionsResolver\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony OptionsResolver Component",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "config",
-                "configuration",
-                "options"
-            ],
-            "time": "2018-11-11T19:52:12+00:00"
-        },
-        {
             "name": "symfony/polyfill-mbstring",
             "version": "v1.10.0",
             "source": {
@@ -2442,6 +2415,90 @@
             "time": "2018-11-11T19:52:12+00:00"
         },
         {
+            "name": "tg-bot-api/telegram-bot-api",
+            "version": "dev-draft",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tg-bot-api/telegram-bot-api.git",
+                "reference": "ea4a9439e8050f06201fab9516b044aa4bf2bd52"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tg-bot-api/telegram-bot-api/zipball/ea4a9439e8050f06201fab9516b044aa4bf2bd52",
+                "reference": "ea4a9439e8050f06201fab9516b044aa4bf2bd52",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">7.2",
+                "phpdocumentor/reflection-docblock": "^4.3",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.0",
+                "symfony/property-access": "^4.2",
+                "symfony/property-info": "^4.2",
+                "symfony/serializer": "^4.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpro/grumphp": "^0.14.3",
+                "phpstan/phpstan": "^0.10.6",
+                "phpunit/phpunit": "~7.5.1",
+                "povils/phpmnd": "^2.0",
+                "sebastian/phpcpd": "^4.1",
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Greenplugin\\TelegramBot\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Greenplugin\\TelegramBot\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "check-style": [
+                    "phpcs src tests"
+                ],
+                "fix-style": [
+                    "phpcbf src tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Greenplugin",
+                    "email": "wformps@gmail.com",
+                    "homepage": "https://github.com/tg-bot-api/telegram-bot-api",
+                    "role": "Developer"
+                }
+            ],
+            "description": "this is low low lwvwl telegram bot api",
+            "homepage": "https://github.com/tg-bot-api/telegram-bot-api",
+            "keywords": [
+                "telegram-bot-api",
+                "tg-bot-api"
+            ],
+            "support": {
+                "source": "https://github.com/tg-bot-api/telegram-bot-api/tree/draft",
+                "issues": "https://github.com/tg-bot-api/telegram-bot-api/issues"
+            },
+            "time": "2019-01-03T23:11:59+00:00"
+        },
+        {
             "name": "webmozart/assert",
             "version": "1.4.0",
             "source": {
@@ -2563,16 +2620,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.1.0",
+            "version": "v4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "d0230c5c77a7e3cfa69446febf340978540958c0"
+                "reference": "8aae5b59b83bb4d0dbf07b0a835f2680a658f610"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/d0230c5c77a7e3cfa69446febf340978540958c0",
-                "reference": "d0230c5c77a7e3cfa69446febf340978540958c0",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/8aae5b59b83bb4d0dbf07b0a835f2680a658f610",
+                "reference": "8aae5b59b83bb4d0dbf07b0a835f2680a658f610",
                 "shasum": ""
             },
             "require": {
@@ -2610,7 +2667,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2018-10-10T09:24:14+00:00"
+            "time": "2018-12-26T11:32:39+00:00"
         },
         {
             "name": "symfony/maker-bundle",
@@ -2790,7 +2847,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "greenplugin/telegram-bot-api": 20
+        "tg-bot-api/telegram-bot-api": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

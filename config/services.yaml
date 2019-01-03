@@ -7,6 +7,8 @@ parameters:
   telegram.token: '%env(TELEGRAM_TOKEN)%'
   telegram.request_dir: '%kernel.project_dir%/var/%env(TELEGRAM_REQUEST_DIR)%'
   telegram.response_dir: '%kernel.project_dir%/var/%env(TELEGRAM_RESPONSE_DIR)%'
+  send.images: '%env(SEND_IMAGES)%'
+  chat.default: '%env(DEFAULT_CHAT)%'
 
 
 services:
@@ -27,6 +29,42 @@ services:
     resource: '../src/Controller'
     tags: ['controller.service_arguments']
 
-  Greenplugin\TelegramBot\HttpClientInterface: '@App\Service\WebClient'
-  # add more service definitions when explicit configuration is needed
-  # please note that last definitions always *replace* previous ones
+  GuzzleHttp\Client:
+    arguments:
+      - { timeout: 30}
+
+  Http\Factory\Guzzle\RequestFactory:
+  Http\Factory\Guzzle\ResponseFactory:
+  Http\Factory\Guzzle\ServerRequestFactory:
+  Http\Factory\Guzzle\StreamFactory:
+  Http\Factory\Guzzle\UploadedFileFactory:
+  Http\Factory\Guzzle\UriFactory:
+
+  Psr\Http\Message\RequestFactoryInterface: '@Http\Factory\Guzzle\RequestFactory'
+  Psr\Http\Message\ResponseFactoryInterface: '@Http\Factory\Guzzle\ResponseFactory'
+  Psr\Http\Message\ServerRequestFactoryInterface: '@Http\Factory\Guzzle\ServerRequestFactory'
+  Psr\Http\Message\StreamFactoryInterface: '@Http\Factory\Guzzle\StreamFactory'
+  Psr\Http\Message\UploadedFileFactoryInterface: '@Http\Factory\Guzzle\UploadedFileFactory'
+  Psr\Http\Message\UriFactoryInterface: '@Http\Factory\Guzzle\UriFactory'
+
+  Http\Adapter\Guzzle6\Client:
+    arguments:
+      - '@GuzzleHttp\Client'
+
+  Psr\Http\Client\ClientInterface: '@Http\Adapter\Guzzle6\Client'
+
+  Greenplugin\TelegramBot\ApiClientInterface:
+    class: App\Service\WebClient
+    arguments:
+      - '@Psr\Http\Message\RequestFactoryInterface'
+      - '@Psr\Http\Message\StreamFactoryInterface'
+      - '@Psr\Http\Client\ClientInterface'
+      - '@parameter_bag'
+      - '@filesystem'
+
+  Greenplugin\TelegramBot\BotApiInterface:
+    class: Greenplugin\TelegramBot\BotApi
+    arguments:
+      - '%telegram.token%'
+      - '@Greenplugin\TelegramBot\ApiClientInterface'
+#      - 'https://google.com'

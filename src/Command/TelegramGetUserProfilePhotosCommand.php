@@ -36,7 +36,7 @@ class TelegramGetUserProfilePhotosCommand extends BotCommand
             $io->error('You must provide user id');
         }
 
-        $getPhotosResponse = $this->bot->getUserProfilePhotos(new GetUserProfilePhotosMethod($userId));
+        $getPhotosResponse = $this->bot->getUserProfilePhotos(GetUserProfilePhotosMethod::create($userId));
 
         $io->title('total count of photos:' . $getPhotosResponse->totalCount);
 
@@ -47,7 +47,7 @@ class TelegramGetUserProfilePhotosCommand extends BotCommand
             $photos[] = [sprintf(
                 "https://api.telegram.org/file/bot%s/%s",
                 $this->params->get('telegram.token'),
-                $this->bot->getFile(new GetFileMethod($fileId))->filePath
+                $this->bot->getFile(GetFileMethod::create($fileId))->filePath
             )];
             foreach ($photo as $size) {
                 $photos[] = [$size->fileId, $size->fileSize, $size->width, $size->height];
