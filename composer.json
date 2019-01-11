@@ -9,7 +9,6 @@
     "http-interop/http-factory-guzzle": "^1.0",
     "php-http/guzzle6-adapter": "^2.0",
     "php-http/httplug": "^2.0",
-    "tg-bot-api/telegram-bot-api": "dev-draft",
     "phpdocumentor/reflection-docblock": "^4.3",
     "symfony/console": "4.2.*",
     "symfony/dotenv": "4.2.*",
@@ -18,14 +17,9 @@
     "symfony/flex": "^1.1",
     "symfony/framework-bundle": "4.2.*",
     "symfony/serializer": "4.2.*",
-    "symfony/yaml": "4.2.*"
+    "symfony/yaml": "4.2.*",
+    "tg-bot-api/bot-api-base": "^0.1.0@beta"
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/tg-bot-api/telegram-bot-api"
-    }
-  ],
   "config": {
     "preferred-install": {
       "*": "dist"

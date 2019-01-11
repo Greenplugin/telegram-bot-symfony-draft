@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace App\Event;
 
 
-use Greenplugin\TelegramBot\Type\UpdateType;
 use Symfony\Component\EventDispatcher\Event;
+use TgBotApi\BotApiBase\Type\UpdateType;
 
 /**
  * Class TelegramIncomingUpdateEvent
@@ -33,7 +33,7 @@ class TelegramIncomingUpdateEvent extends Event
     /**
      * @return UpdateType
      */
-    public function getUpdate()
+    public function getUpdate(): UpdateType
     {
         return $this->update;
     }

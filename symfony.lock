@@ -123,7 +123,7 @@
         "version": "v4.2.1"
     },
     "symfony/inflector": {
-        "version": "v4.2.1"
+        "version": "v4.2.2"
     },
     "symfony/maker-bundle": {
         "version": "1.0",
@@ -141,10 +141,10 @@
         "version": "v4.2.1"
     },
     "symfony/property-access": {
-        "version": "v4.2.1"
+        "version": "v4.2.2"
     },
     "symfony/property-info": {
-        "version": "v4.2.1"
+        "version": "v4.2.2"
     },
     "symfony/routing": {
         "version": "4.2",
@@ -173,8 +173,8 @@
     "symfony/yaml": {
         "version": "v4.2.1"
     },
-    "tg-bot-api/telegram-bot-api": {
-        "version": "1.0-dev"
+    "tg-bot-api/bot-api-base": {
+        "version": "0.1.0-beta"
     },
     "webmozart/assert": {
         "version": "1.4.0"

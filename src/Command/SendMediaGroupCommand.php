@@ -3,7 +3,6 @@
 namespace App\Command;
 
 use Greenplugin\TelegramBot\Method\SendMediaGroupMethod;
-use Greenplugin\TelegramBot\Type\InputFileType;
 use Greenplugin\TelegramBot\Type\InputMedia\InputMediaPhotoType;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

@@ -2,16 +2,14 @@
 
 namespace App\Command;
 
-use Greenplugin\TelegramBot\ApiClientInterface;
-use Greenplugin\TelegramBot\BotApi;
-use Greenplugin\TelegramBot\BotApiInterface;
-use Greenplugin\TelegramBot\Method\GetUpdatesMethod;
-use Greenplugin\TelegramBot\Type\UpdateType;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use TgBotApi\BotApiBase\BotApi;
+use TgBotApi\BotApiBase\BotApiInterface;
+use TgBotApi\BotApiBase\Method\GetUpdatesMethod;
+use TgBotApi\BotApiBase\Type\UpdateType;
 
 /**
  * Class GetTelegramUpdatesCommand
@@ -40,8 +38,8 @@ class GetTelegramUpdatesCommand extends Command
      * @param InputInterface $input
      * @param OutputInterface $output
      * @return int|void|null
-     * @throws \Greenplugin\TelegramBot\Exception\BadArgumentException
-     * @throws \Greenplugin\TelegramBot\Exception\ResponseException
+     * @throws \TgBotApi\BotApiBase\Exception\ResponseException
+     * @throws \TgBotApi\BotApiBase\Exception\BadArgumentException
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -73,9 +71,9 @@ class GetTelegramUpdatesCommand extends Command
 
     /**
      * @param UpdateType $update
-     * @return \Greenplugin\TelegramBot\Type\MessageType|null
+     * @return \TgBotApi\BotApiBase\Type\MessageType|null
      */
-    private function getUpdateData($update)
+    private function getUpdateData(UpdateType $update)
     {
         if (isset($update->message)) {
             return $update->message;

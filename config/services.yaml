@@ -31,7 +31,7 @@ services:
 
   GuzzleHttp\Client:
     arguments:
-      - { timeout: 30}
+      - { timeout: 120}
 
   Http\Factory\Guzzle\RequestFactory:
   Http\Factory\Guzzle\ResponseFactory:
@@ -53,7 +53,11 @@ services:
 
   Psr\Http\Client\ClientInterface: '@Http\Adapter\Guzzle6\Client'
 
-  Greenplugin\TelegramBot\ApiClientInterface:
+  TgBotApi\BotApiBase\BotApiNormalizer:
+
+  TgBotApi\BotApiBase\NormalizerInterface: '@TgBotApi\BotApiBase\BotApiNormalizer'
+
+  TgBotApi\BotApiBase\ApiClientInterface:
     class: App\Service\WebClient
     arguments:
       - '@Psr\Http\Message\RequestFactoryInterface'
@@ -62,9 +66,10 @@ services:
       - '@parameter_bag'
       - '@filesystem'
 
-  Greenplugin\TelegramBot\BotApiInterface:
-    class: Greenplugin\TelegramBot\BotApi
+  TgBotApi\BotApiBase\BotApiInterface:
+    class: TgBotApi\BotApiBase\BotApiComplete
     arguments:
       - '%telegram.token%'
-      - '@Greenplugin\TelegramBot\ApiClientInterface'
+      - '@TgBotApi\BotApiBase\ApiClientInterface'
+#      - TgBotApi\BotApiBase\NormalizerInterface
 #      - 'https://google.com'

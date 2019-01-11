@@ -2,13 +2,13 @@
 
 namespace App\Command;
 
-use Greenplugin\TelegramBot\Method\GetFileMethod;
-use Greenplugin\TelegramBot\Method\GetUserProfilePhotosMethod;
-use Greenplugin\TelegramBot\Type\PhotoSizeType;
 use Symfony\Component\Console\Helper\TableSeparator;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use TgBotApi\BotApiBase\Method\GetFileMethod;
+use TgBotApi\BotApiBase\Method\GetUserProfilePhotosMethod;
+use TgBotApi\BotApiBase\Type\PhotoSizeType;
 
 class TelegramGetUserProfilePhotosCommand extends BotCommand
 {
@@ -19,13 +19,7 @@ class TelegramGetUserProfilePhotosCommand extends BotCommand
         $this->setDescription('Getting user profile photos.');
     }
 
-    /**
-     * @param InputInterface $input
-     * @param OutputInterface $output
-     * @return int|void|null
-     * @throws \Greenplugin\TelegramBot\Exception\BadArgumentException
-     * @throws \Greenplugin\TelegramBot\Exception\ResponseException
-     */
+
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
@@ -42,13 +36,13 @@ class TelegramGetUserProfilePhotosCommand extends BotCommand
 
         $photos = [];
         foreach ($getPhotosResponse->photos as $key => $photo) {
-            /** @var PhotoSizeType $size */
-            $fileId = $photo->toArray()[count($photo->toArray()) - 1]->fileId;
+            $fileId = $photo[count($photo) - 1]->fileId;
             $photos[] = [sprintf(
                 "https://api.telegram.org/file/bot%s/%s",
                 $this->params->get('telegram.token'),
                 $this->bot->getFile(GetFileMethod::create($fileId))->filePath
             )];
+            /** @var PhotoSizeType $size */
             foreach ($photo as $size) {
                 $photos[] = [$size->fileId, $size->fileSize, $size->width, $size->height];
             }

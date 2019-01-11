@@ -3,12 +3,13 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use Greenplugin\TelegramBot\ApiClient;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\Filesystem\Filesystem;
+use TgBotApi\BotApiBase\ApiClient;
+use TgBotApi\BotApiBase\BotApiRequestInterface;
 
 class WebClient extends ApiClient
 {
@@ -28,26 +29,18 @@ class WebClient extends ApiClient
         $this->checkDirs();
     }
 
-    public function send(string $method, array $data, array $files = [])
+    public function send(string $method, BotApiRequestInterface $request)
     {
-        $this->writeRequest($method, ['data' => $data, 'files' => $files]);
-        $response = parent::send($method, $data, $files);
+        $this->writeRequest($method, $request);
+        $response = parent::send($method, $request);
         $this->writeResponse($method, $response);
         return $response;
     }
 
-    protected function generateUri(string $method): string
-    {
-       $endpoint = parent::generateUri($method);
-       var_dump($endpoint);
-       return $endpoint;
-    }
-
-
-    private function writeRequest($requestName, array $data)
+    private function writeRequest($requestName, BotApiRequestInterface $request)
     {
         $fileName = $requestName . '_request.json';
-        $this->fs->dumpFile($this->params->get('telegram.request_dir') . '/' . $fileName, json_encode($data));
+        $this->fs->dumpFile($this->params->get('telegram.request_dir') . '/' . $fileName, json_encode($request->getData()));
     }
 
     private function writeResponse($requestName, $data)

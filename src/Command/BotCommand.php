@@ -2,14 +2,14 @@
 
 namespace App\Command;
 
-use Greenplugin\TelegramBot\BotApi;
-use Greenplugin\TelegramBot\BotApiInterface;
-use Greenplugin\TelegramBot\Method\GetMeMethod;
+
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use TgBotApi\BotApiBase\BotApiInterface;
+use TgBotApi\BotApiBase\Method\GetMeMethod;
 
 class BotCommand extends Command
 {
@@ -37,7 +37,7 @@ class BotCommand extends Command
      * @param InputInterface $input
      * @param OutputInterface $output
      * @return int|void|null
-     * @throws \Greenplugin\TelegramBot\Exception\ResponseException
+     * @throws \TgBotApi\BotApiBase\Exception\ResponseException
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
