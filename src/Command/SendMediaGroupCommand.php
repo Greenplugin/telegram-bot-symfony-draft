@@ -2,11 +2,12 @@
 
 namespace App\Command;
 
-use Greenplugin\TelegramBot\Method\SendMediaGroupMethod;
-use Greenplugin\TelegramBot\Type\InputMedia\InputMediaPhotoType;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use TgBotApi\BotApiBase\Method\SendMediaGroupMethod;
+use TgBotApi\BotApiBase\Type\InputFileType;
+use TgBotApi\BotApiBase\Type\InputMedia\InputMediaPhotoType;
 
 class SendMediaGroupCommand extends BotCommand
 {
@@ -24,7 +25,7 @@ class SendMediaGroupCommand extends BotCommand
 
         $images = [];
         foreach (explode(',', $this->params->get('send.images')) as $image) {
-            $images[] = InputMediaPhotoType::create(new \SplFileInfo($image));
+            $images[] = InputMediaPhotoType::create(InputFileType::create($image), ['caption' => 'this is media group image']);
         }
 
         $mediaGroup = SendMediaGroupMethod::create($this->params->get('chat.default'), $images);

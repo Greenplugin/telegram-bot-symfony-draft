@@ -8,17 +8,19 @@
     "ext-json": "*",
     "http-interop/http-factory-guzzle": "^1.0",
     "php-http/guzzle6-adapter": "^2.0",
-    "php-http/httplug": "^2.0",
     "phpdocumentor/reflection-docblock": "^4.3",
+    "sensio/framework-extra-bundle": "^5.2",
     "symfony/console": "4.2.*",
     "symfony/dotenv": "4.2.*",
     "symfony/event-dispatcher": "4.2.*",
     "symfony/filesystem": "4.2.*",
     "symfony/flex": "^1.1",
     "symfony/framework-bundle": "4.2.*",
+    "symfony/psr-http-message-bridge": "^1.1",
     "symfony/serializer": "4.2.*",
     "symfony/yaml": "4.2.*",
-    "tg-bot-api/bot-api-base": "^0.1.0@beta"
+    "tg-bot-api/bot-api-base": "^0.1.0@beta",
+    "zendframework/zend-diactoros": "1.7.*"
   },
   "config": {
     "preferred-install": {
