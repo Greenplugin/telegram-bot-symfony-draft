@@ -49,7 +49,7 @@ class TelegramWatchCommand extends Command
 
         $io->success('Listening updates');
 
-        $offset = intval($input->getArgument('offset'));
+        $offset = (int)$input->getArgument('offset');
 
         $updateParams = ['timeout' => 120];
 
