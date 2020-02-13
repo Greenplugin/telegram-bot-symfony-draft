@@ -31,6 +31,7 @@ class WebClient extends ApiClient
 
     public function send(string $method, BotApiRequestInterface $request)
     {
+        var_dump($request->getData());
         $this->writeRequest($method, $request);
         $response = parent::send($method, $request);
         $this->writeResponse($method, $response);

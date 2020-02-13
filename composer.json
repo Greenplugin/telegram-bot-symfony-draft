@@ -19,7 +19,7 @@
     "symfony/psr-http-message-bridge": "^1.1",
     "symfony/serializer": "4.2.*",
     "symfony/yaml": "4.2.*",
-    "tg-bot-api/bot-api-base": "^0.1.0@beta",
+    "tg-bot-api/bot-api-base": "^1.0.0",
     "zendframework/zend-diactoros": "1.7.*"
   },
   "config": {
